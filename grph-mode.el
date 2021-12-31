@@ -11,9 +11,9 @@
    '("#[A-Za-z]+" . font-lock-preprocessor-face))
   "Highlight commands")
 
-(define-derived-mode grph-mode nil "GRPH"
+(define-derived-mode grph-mode prog-mode "GRPH"
   (setq-local comment-start "//")
-  (setq-local indent-tabs-mode t)
+  ; (setq-local indent-tabs-mode t)
   (set (make-local-variable 'font-lock-defaults) '(grph-keywords)))
 
 (add-to-list 'auto-mode-alist (cons "\\.grph\\'" 'grph-mode))

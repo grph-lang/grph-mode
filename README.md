@@ -8,7 +8,7 @@ To run, it first needs the GRPH LSP server installed. Clone the compiler from [h
 
 Clone this repo, then, add the following to your .emacs:
 
-```lisp
+```elisp
 (setq load-path
     (cons (expand-file-name "[INSERT grph-mode REPO HERE]") load-path))
 (require 'grph-mode)
@@ -17,3 +17,11 @@ Clone this repo, then, add the following to your .emacs:
 ```
 
 Make sure to replace `[INSERT grph-mode REPO HERE]` with the path of the directory where grph-mode.el can be found, and replace `[INSERT grph REPO HERE]` with the path of the directory where the compiler has been cloned.
+
+The plugin depends on [lsp-mode](https://emacs-lsp.github.io/lsp-mode/), make sure to have it installed too.
+
+If you want lsp to automatically be enabled when opening a GRPH file, you can add the following to your `.emacs` :
+```elisp
+(add-hook 'grph-mode-hook #'lsp)
+```
+
